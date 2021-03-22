@@ -1,0 +1,1 @@
+go build -buildmode=c-shared -o libtest.so main.go
