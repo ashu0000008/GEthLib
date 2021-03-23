@@ -4,10 +4,8 @@ import "C"
 
 import (
 	"context"
-	"fmt"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
-	"log"
 )
 
 //export TestGetAccountBalance
@@ -20,8 +18,6 @@ func TestGetAccountBalance() int64 {
 	account := common.HexToAddress("0xCC5d22bB804D7BFFc48BDAe7563Ba7843FE4928a")
 	balance, err := client.BalanceAt(context.Background(), account, nil)
 	if err != nil {
-		log.Fatal(err)
 	}
-	fmt.Println(balance)
 	return balance.Int64()
 }

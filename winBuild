@@ -4,14 +4,14 @@ set GOOS=android
 ## arm64 (arm64-v8a) CC=aarch64-linux-android19-clang.cmd CXX=aarch64-linux-android19-clang++.cmd
 ## 386 (x86) CC=i686-linux-android19-clang.cmd CXX=i686-linux-android19-clang++.cmd
 ## amd64 (x86_64) CC=x86_64-linux-android21-clang.cmd CXX=x86_64-linux-android21-clang++.cmd
-set GOARCH=386
+set GOARCH=arm
 ## 这个一定要,不然你编译出来的so各种未定义
 set CGO_ENABLED=1
 ## 设置NDK的编译器路径,需要和 GOARCH 对应
-#set CC=%ANDROID_NDK_HOME%\toolchains\llvm\prebuilt\windows-x86_64\bin\armv7a-linux-androideabi19-clang.cmd
-#set CXX=%ANDROID_NDK_HOME%\toolchains\llvm\prebuilt\windows-x86_64\bin\armv7a-linux-androideabi19-clang++.cmd
-set CC=%ANDROID_NDK_HOME%\toolchains\llvm\prebuilt\windows-x86_64\bin\i686-linux-android28-clang.cmd
-set CXX=%ANDROID_NDK_HOME%\toolchains\llvm\prebuilt\windows-x86_64\bin\i686-linux-android28-clang++.cmd
+set CC=%ANDROID_NDK_HOME%\toolchains\llvm\prebuilt\windows-x86_64\bin\armv7a-linux-androideabi19-clang.cmd
+set CXX=%ANDROID_NDK_HOME%\toolchains\llvm\prebuilt\windows-x86_64\bin\armv7a-linux-androideabi19-clang++.cmd
+#set CC=%ANDROID_NDK_HOME%\toolchains\llvm\prebuilt\windows-x86_64\bin\i686-linux-android28-clang.cmd
+#set CXX=%ANDROID_NDK_HOME%\toolchains\llvm\prebuilt\windows-x86_64\bin\i686-linux-android28-clang++.cmd
 
 go build -buildmode=c-shared -o lib4Android.so main.go
 
